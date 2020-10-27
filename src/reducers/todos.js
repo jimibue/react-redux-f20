@@ -14,6 +14,15 @@ const todos = (state = defaultState, action) => {
       return action.todos;
     case "ADD_TODO":
       return [...state, action.todo];
+    case "TOGGLE_TODO":
+      return state.map((todo) => {
+        // if match action.id create a new todo object with toggle complete
+        if (todo.id === action.id) {
+          return { ...todo, complete: !todo.complete };
+        }
+        // else just return todo
+        return todo;
+      });
     default:
       return state;
   }
