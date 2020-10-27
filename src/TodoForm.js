@@ -10,6 +10,7 @@ class TodoForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     // dispatch action add todo dispatch({ type: "ADD_TODO", todo: "nap" });
+    // we can't quite do this it isn't just this simple
     // let res = axios.post("todos");
     this.props.dispatch({ type: "ADD_TODO", todo: this.state.name });
     this.setState({ name: "" });
